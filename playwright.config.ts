@@ -1,15 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
-
 import dotenv from 'dotenv';
 import path from 'path';
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, 'C:\\Users\\cerdem\\Desktop\\Playwright Training\\utils\\constant.env') });
 
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   reporter: 'html',
   use: {
-    baseURL: process.env.url || 'http://localhost:3000',
+    baseURL: process.env.url,
     trace: 'on-first-retry',
   },
 
