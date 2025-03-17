@@ -6,7 +6,7 @@ dotenv.config({ path: path.resolve(__dirname, 'C:\\Users\\cerdem\\Desktop\\Playw
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  reporter: 'html',
+  reporter: 'list',
   use: {
     baseURL: process.env.url,
     trace: 'on-first-retry',

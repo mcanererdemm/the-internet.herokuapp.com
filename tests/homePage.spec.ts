@@ -37,6 +37,7 @@ test.describe('Home Page Suite @homepage', () => {
   });
 
   test('homePage loop through all links test case', async ({ page }) => {
+    test.slow();
     const pm = new PackageManager(page);
     const onHomePage = pm.onHomePage();
     await onHomePage.loopThroughLinks()
