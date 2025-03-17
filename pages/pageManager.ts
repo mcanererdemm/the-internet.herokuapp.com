@@ -3,6 +3,7 @@ import { HomePage } from "./homePage";
 import { AandBPage } from "./aAndBPage";
 import { AddRemovePage } from "./addRemovePage";
 import { BasicAuthPage } from "./basicAuth";
+import { BrokenImagesPage } from "./brokenImages";
 
 export class PageManager {
     private readonly page: Page
@@ -10,6 +11,7 @@ export class PageManager {
     private readonly aAndBPage: AandBPage
     private readonly addRemovePage: AddRemovePage
     private readonly basicAuthPage: BasicAuthPage
+    private readonly brokenImagesPage: BrokenImagesPage
 
     constructor(page: Page) {
         this.page = page
@@ -17,6 +19,7 @@ export class PageManager {
         this.aAndBPage = new AandBPage(this.page)
         this.addRemovePage = new AddRemovePage(this.page)
         this.basicAuthPage = new BasicAuthPage(this.page)
+        this.brokenImagesPage = new BrokenImagesPage(this.page)
     }
 
     async backToPreviusPage() {
@@ -37,5 +40,9 @@ export class PageManager {
 
     onBasicAuthPage() {
         return this.basicAuthPage
+    }
+
+    onBrokenImagesPage() {
+        return this.brokenImagesPage
     }
 }
