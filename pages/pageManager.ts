@@ -4,6 +4,7 @@ import { AandBPage } from "./aAndBPage";
 import { AddRemovePage } from "./addRemovePage";
 import { BasicAuthPage } from "./basicAuth";
 import { BrokenImagesPage } from "./brokenImages";
+import { ChallengingDomPage } from "./challengingDomPage";
 
 export class PageManager {
     private readonly page: Page
@@ -12,6 +13,7 @@ export class PageManager {
     private readonly addRemovePage: AddRemovePage
     private readonly basicAuthPage: BasicAuthPage
     private readonly brokenImagesPage: BrokenImagesPage
+    private readonly challengingDomPage: ChallengingDomPage
 
     constructor(page: Page) {
         this.page = page
@@ -20,6 +22,7 @@ export class PageManager {
         this.addRemovePage = new AddRemovePage(this.page)
         this.basicAuthPage = new BasicAuthPage(this.page)
         this.brokenImagesPage = new BrokenImagesPage(this.page)
+        this.challengingDomPage = new ChallengingDomPage(this.page)
     }
 
     async backToPreviusPage() {
@@ -44,5 +47,9 @@ export class PageManager {
 
     onBrokenImagesPage() {
         return this.brokenImagesPage
+    }
+
+    onChallangingDomPage() {
+        return this.challengingDomPage
     }
 }

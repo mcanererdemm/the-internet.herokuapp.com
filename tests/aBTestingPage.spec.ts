@@ -11,6 +11,6 @@ test.describe('A and B Page Page Suite @abtest', () => {
   test('Verify header text', async ({ page }) => {
     const pm = new PageManager(page);
     const onHomePage = pm.onAandBPage()
-    onHomePage.verifyHeaderText
+    onHomePage.verifyHeaderText()
   });
 });
