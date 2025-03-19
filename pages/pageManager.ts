@@ -5,6 +5,7 @@ import { AddRemovePage } from "./addRemovePage";
 import { BasicAuthPage } from "./basicAuth";
 import { BrokenImagesPage } from "./brokenImages";
 import { ChallengingDomPage } from "./challengingDomPage";
+import { CheckboxesPage } from "./checkboxesPage";
 
 export class PageManager {
     private readonly page: Page
@@ -14,6 +15,7 @@ export class PageManager {
     private readonly basicAuthPage: BasicAuthPage
     private readonly brokenImagesPage: BrokenImagesPage
     private readonly challengingDomPage: ChallengingDomPage
+    private readonly checkboxesPage: CheckboxesPage
 
     constructor(page: Page) {
         this.page = page
@@ -23,6 +25,7 @@ export class PageManager {
         this.basicAuthPage = new BasicAuthPage(this.page)
         this.brokenImagesPage = new BrokenImagesPage(this.page)
         this.challengingDomPage = new ChallengingDomPage(this.page)
+        this.checkboxesPage = new CheckboxesPage(this.page)
     }
 
     async backToPreviusPage() {
@@ -51,5 +54,8 @@ export class PageManager {
 
     onChallangingDomPage() {
         return this.challengingDomPage
+    }
+    onCheckboxesPage() {
+        return this.checkboxesPage
     }
 }
