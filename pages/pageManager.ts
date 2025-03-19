@@ -7,6 +7,7 @@ import { BrokenImagesPage } from "./brokenImages";
 import { ChallengingDomPage } from "./challengingDomPage";
 import { CheckboxesPage } from "./checkboxesPage";
 import { ContextMenuPage } from "./contextMenuPage";
+import { DigestAuthenticationPage } from "./digestAuthenticationPage";
 
 export class PageManager {
     private readonly page: Page
@@ -18,6 +19,7 @@ export class PageManager {
     private readonly challengingDomPage: ChallengingDomPage
     private readonly checkboxesPage: CheckboxesPage
     private readonly contextMenuPage: ContextMenuPage
+    private readonly digestAuthenticationPage: DigestAuthenticationPage
 
     constructor(page: Page) {
         this.page = page
@@ -29,6 +31,7 @@ export class PageManager {
         this.challengingDomPage = new ChallengingDomPage(this.page)
         this.checkboxesPage = new CheckboxesPage(this.page)
         this.contextMenuPage = new ContextMenuPage(this.page)
+        this.digestAuthenticationPage = new DigestAuthenticationPage(this.page)
     }
 
     async backToPreviusPage() {
@@ -64,5 +67,9 @@ export class PageManager {
 
     onContextMenuPage() {
         return this.contextMenuPage
+    }
+
+    onDigestAuthenticationPage() {
+        return this.digestAuthenticationPage
     }
 }
